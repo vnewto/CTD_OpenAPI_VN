@@ -1,0 +1,399 @@
+/* Styled for mobile design and then media queries go up in size from tablet to desktop */
+
+/* CSS HEX
+CSS HEX
+--light-light-blue: #DBE7EFff;
+--almost white light blue: #EDF4F8ff;
+--light-green-gray: #9EBDB9ff;
+--medium-blue: #588AA5ff;
+--dark green-blue: #305E6Dff;
+
+SCSS RGB
+$alice-blue: rgba(219, 231, 239, 1);
+$alice-blue-2: rgba(237, 244, 248, 1);
+$ash-gray: rgba(158, 189, 185, 1);
+$air-force-blue: rgba(88, 138, 165, 1);
+$paynes-gray: rgba(48, 94, 109, 1);
+
+SCSS Gradient
+$gradient-top: linear-gradient(0deg, #DBE7EFff, #EDF4F8ff, #9EBDB9ff, #588AA5ff, #305E6Dff);
+$gradient-right: linear-gradient(90deg, #DBE7EFff, #EDF4F8ff, #9EBDB9ff, #588AA5ff, #305E6Dff);
+$gradient-bottom: linear-gradient(180deg, #DBE7EFff, #EDF4F8ff, #9EBDB9ff, #588AA5ff, #305E6Dff);
+$gradient-left: linear-gradient(270deg, #DBE7EFff, #EDF4F8ff, #9EBDB9ff, #588AA5ff, #305E6Dff);
+$gradient-top-right: linear-gradient(45deg, #DBE7EFff, #EDF4F8ff, #9EBDB9ff, #588AA5ff, #305E6Dff);
+$gradient-bottom-right: linear-gradient(135deg, #DBE7EFff, #EDF4F8ff, #9EBDB9ff, #588AA5ff, #305E6Dff);
+$gradient-top-left: linear-gradient(225deg, #DBE7EFff, #EDF4F8ff, #9EBDB9ff, #588AA5ff, #305E6Dff);
+$gradient-bottom-left: linear-gradient(315deg, #DBE7EFff, #EDF4F8ff, #9EBDB9ff, #588AA5ff, #305E6Dff);
+$gradient-radial: radial-gradient(#DBE7EFff, #EDF4F8ff, #9EBDB9ff, #588AA5ff, #305E6Dff);
+*/
+
+/* ==============
+Typography
+=============== */
+
+html {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    color: #172d34;
+    font-family: "Poppins", serif;
+}
+
+h1,
+.logo-link,
+.copyright-text {
+    color: white;
+    text-align: center;
+    font-family: "Geologica", serif;
+}
+
+.project-h2 {
+    color: #DBE7EFff;
+}
+
+p a {
+    color: #305E6Dff;
+}
+
+em {
+    font-weight: 600;
+}
+
+.nav-link {
+    color: #172d34;
+    text-decoration: none;
+}
+
+.ki-week-container h3 {
+    color: rgb(152, 195, 189);
+    text-shadow: 0 0 10px black;
+}
+
+
+
+
+/* =================
+Nav Bar
+=============== */
+
+nav {
+    background: #9EBDB9ff;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    position: sticky;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0 auto;
+    align-items: center;
+    padding-left: 0;
+    overflow: hidden;
+    gap: 0.5em;
+    padding: 0.5em;
+}
+
+.nav-link {
+    padding: 0.5em;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+    background: #172d34;
+    color: white;
+    font-weight: 600;
+}
+
+.active {
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.container {
+    max-width: 1000px;
+    background: #DBE7EFff;
+    margin: 0 auto;
+    padding: 1.5em;
+}
+
+
+/* ================
+Home Page 
+=============*/
+/* =========
+Main Content
+============== */
+
+.project-container,
+.variables-info,
+.oceanEnergyInfo {
+    margin-bottom: 5em;
+}
+
+/* Project Section */
+.project-list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+}
+
+.project {
+    padding: 0.8em;
+}
+
+.project-link {
+    padding: 0.8em 2em;
+    background: #305E6Dff;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 #9EBDB9ff;
+    font-weight: 600;
+}
+
+.project-link:focus,
+.project-link:hover {
+    background: #fff;
+    color: #305E6Dff;
+    box-shadow: 0 0 10px 0 #9EBDB9ff;
+}
+
+
+/* Wave Energy Variables Section */
+.ocean-waves-pic {
+    width: 100%;
+    max-height: 225px;
+    object-fit: cover;
+    box-shadow: 0 0 5px 0 #305E6Dff;
+}
+
+.wave-variables {
+    margin-bottom: 2em;
+}
+
+
+/* Other Types Of Energy Section */
+.ocean-energy-types {
+    margin-bottom: 2em;
+}
+
+.ocean-energy-video p {
+    font-size: 0.8rem;
+}
+
+.energy-video {
+    box-shadow: 0 0 5px 0 #305E6Dff;
+    margin-bottom: 0;
+}
+
+p a:focus,
+p a:hover {
+    color: #172d34;
+    font-weight: 600;
+}
+
+
+/* ============
+Project Pages
+============= */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 0 95 0;
+    grid-template-areas: 
+        " . kiPicture . "
+        " . current . "
+        " . week . ";
+    grid-gap: 2em;
+}
+
+.project-grid-item {
+    background: #305E6Dff;
+    padding: 0 1.5em;
+    border-radius: 20px;
+    box-shadow: 0 0 3px 0 #172d34;
+}
+
+.ki-pic-container {
+    grid-area: kiPicture;
+    color: #fff;
+}
+
+.ki-pic {
+    object-fit: cover;
+    width: 100%;
+    max-height: 200px;
+    border-radius: 15px;
+    margin: 1em auto 0;
+    box-shadow: 0 0 3px 0 #172d34;
+}
+
+.ki-pic-container a {
+    color: #DBE7EFff;
+}
+
+.ki-pic-container a:focus,
+.ki-pic-container a:hover {
+    color: #172d34;
+}
+
+.project-variables-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 1.5em;
+    color: #fff;
+}
+
+.current {
+    grid-area: current;
+}
+
+.ki-current-container,
+.ki-day {
+    background: rgba(158, 189, 185, 0.1);
+    border-radius: 10px;
+}
+
+.ki-current-container {
+    box-shadow: 0 0 3px 0 #172d34;
+    padding: 0.5em 1em;
+}
+
+.ki-day {
+    padding: 0 1.5em;
+}
+
+.ki-current-container p {
+    margin: 0.5em;
+}
+
+.week {
+    grid-area: week;
+    background: #172d34;
+    box-shadow: 0 0 3px 0 #305E6Dff;
+}
+
+.ki-day {
+    box-shadow: 0 0 3px 0 #DBE7EFff;
+    margin: 0.7em auto;
+}
+
+
+
+/* ==============
+Footer
+=============== */
+
+.footer {
+    width: 100%;
+    z-index: 1;
+    background: #9EBDB9ff;
+    margin: 0;
+    padding: 0.5em;
+    bottom: 0;
+}
+
+.connect-ul {
+    background: #9EBDB9ff;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 0.5em;
+    font-size: 2rem;
+    justify-content: center;
+    margin: 0.5em 1em 0 1em;
+}
+
+.logo-link {
+    padding: 0.5em;
+}
+
+.logo-link:focus,
+.logo-link:hover {
+    color: #172d34;
+}
+
+
+
+/* ================
+Media Queries
+================== */
+/* Tablet */
+@media(min-width: 700px) {
+    .nav-list {
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 0.8em 0;
+    }
+
+    .nav-link {
+        padding: 1em;
+    }
+
+    .project-list {
+        flex-direction: row;
+    }
+
+    .energy-video {
+        width: 85%;
+    }
+}
+
+
+
+
+/* Laptop/Desktop */
+@media(min-width: 900px) {
+    .container {
+        margin-bottom: 3em;
+    }
+
+    .ocean-waves-pic {
+        width: 80%;
+    }
+
+    .energy-variables-container {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 1em;
+        gap: 2em;
+    }
+
+    .wave-variables {
+        padding-top: 0;
+    }
+
+    .ocean-waves-pic {
+        max-width: 40%;
+        max-height: 100%;
+    }
+
+    .ocean-energy-container {
+        display: flex;
+    }
+
+    .ocean-energy-types {
+        padding: 1em;
+        padding-top: 0;
+    }
+
+    .ocean-energy-video {
+        max-width: 50%;
+        padding: 1em;
+    }
+
+    .energy-video {
+        width: 100%;
+    }
+}
