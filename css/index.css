@@ -388,14 +388,13 @@ Media Queries
     .ocean-energy-types {
         padding: 1em;
         padding-top: 0;
+        width: 50%;
     }
 
     .ocean-energy-video {
-        max-width: 50%;
         padding: 1em;
+        padding-left: 2em;
+        border-left: solid #9EBDB9ff 2px;
     }
 
-    .energy-video {
-        width: 100%;
-    }
 }

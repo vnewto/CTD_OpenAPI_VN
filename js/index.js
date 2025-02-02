@@ -1,21 +1,34 @@
 //King Island Lat,Long: -40.063669, 144.061626
 
 //Kaneohe Bay Lat,Long: 21.458367, -157.759595
-//Kaneohe Bay Open API for Daily Wave Height, Wave Direction, and Wave Period (7 days): https://marine-api.open-meteo.com/v1/marine?latitude=21.3999&longitude=-157.7989&daily=wave_height_max,wave_direction_dominant,wave_period_max&timezone=auto
 
+let pathName = window.location.pathname;
+console.log("pathName: ", pathName);
+const kingIslandPathName = "/kingisland.html"; 
+const kaneoheBayPathName = "/kaneohebay.html";
 
-/*========
-King Island
-=========*/
+//declare variables for all fetch urls, both KI (King Island) and KB (Kaneohe Bay)
+// let KIlocalTimeAPI = "https://www.timeapi.io/api/time/current/coordinate?latitude=-40.063669&longitude=144.061626";
+// let KIcurrentWaves = "https://marine-api.open-meteo.com/v1/marine?latitude=-40.063669&longitude=144.061626&current=wave_height,wave_direction,wave_period&timezone=Australia%2FSydney&forecast_days=1";
+// let KIweekWaves = "https://marine-api.open-meteo.com/v1/marine?latitude=-40.0492&longitude=144.0561&daily=wave_height_max,wave_direction_dominant,wave_period_max&timezone=Australia%2FSydney";
 
-const pageURL = window.location.href;
-console.log("pageURL: ", pageURL);
+// let KBlocalTimeAPI = "https://www.timeapi.io/api/time/current/coordinate?latitude=21.458367&longitude=-157.759595";
+// let KBcurrentWaves = "https://marine-api.open-meteo.com/v1/marine?latitude=21.458367&longitude=-157.759595&current=wave_height,wave_direction,wave_period&timezone=Pacific%2FAuckland";
+// let KBweekWaves = "https://marine-api.open-meteo.com/v1/marine?latitude=21.3999&longitude=-157.7989&daily=wave_height_max,wave_direction_dominant,wave_period_max&timezone=auto";
 
-// if the page is kingisland
-    //set url to searchurl
-//if 
+let localTime = "";
+let currentOpenAPI = "";
+let weekOpenAPI = "";
 
+//conditional statements to determine which webpage the user is in, which determine which url is used for the fetch requests
 
+    if (pathName.localeCompare(kingIslandPathName) === 0) {
+        let localTime = "https://www.timeapi.io/api/time/current/coordinate?latitude=-40.063669&longitude=144.061626";
+        console.log("localTime: ", localTime);
+    } 
+    else if (pathName.localeCompare(kaneoheBayPathName) === 0) {
+         let localTime = "https://www.timeapi.io/api/time/current/coordinate?latitude=21.458367&longitude=-157.759595";
+    } 
 
 //Current Local Time
 
@@ -26,14 +39,14 @@ console.log("pageURL: ", pageURL);
  console.log("KIcurrContainer: ", KIcurrContainer);
 
 //Fetch request to get current time
-fetch("https://www.timeapi.io/api/time/current/coordinate?latitude=-40.063669&longitude=144.061626")
+fetch(localTime)
     .then((response) => {
         return response.json();
     })
     .then((data) => {
         console.log("Kings Island time Open API: ", data);
         
-        //pull current day, date, and time
+        //pull current local day, date, and time
         const KIcurrentDate = data.date;
         console.log("KIcurrentDate: ", KIcurrentDate);
         const KIcurrentDay = data.dayOfWeek;
@@ -52,31 +65,8 @@ fetch("https://www.timeapi.io/api/time/current/coordinate?latitude=-40.063669&lo
         console.log("KIcurrentTime: ", KIcurrentTime);
 
         //append h3 and p element to the "current" container
-        // KIcurrContainer.insertBefore(KIcurrentDayAndTime);
-        KIcurrCondContainer.appendChild(KIcurrentTime);
-        
-
-        // let KIcurrentTime = "";
-        // //if hour equals 0, change it to 12 AM
-        // if (KIhour === 0) {
-        //     let KIcurrentTime = `12:${KImin}am`;
-        //     console.log("local time: ", KIcurrentTime);
-        // }
-        // //if hour is between 1 and 11, make it AM
-        // else if (1 <= KIhour <= 11) {
-        //     let KIcurrentTime = `${hour}:${KImin}am`;
-        //     console.log("local time: ", KIcurrentTime);
-        // } 
-        // //if hour is 12, make it PM
-        // else if (KIhour === 12) {
-        //     let KIcurrentTime = `12:${KImin}pm`;
-        //     console.log("local time: ", KIcurrentTime);
-        // }
-        // //if hour is between 13 and 23, make it PM
-        // else if (13 <= KIhour <= 23) {
-        //     let KIcurrentTime = (Number(hour)-12) + ":" + KImin + " pm";
-        //     console.log("local time: ", KIcurrentTime);
-        // }
+        KIcurrCondContainer.insertBefore(KIcurrentDayAndTime, KIcurrContainer);
+        KIcurrCondContainer.insertBefore(KIcurrentTime, KIcurrContainer);
         
     })
     .catch((error) => {
@@ -133,7 +123,8 @@ fetch("https://marine-api.open-meteo.com/v1/marine?latitude=-40.063669&longitude
 
 
 
-// Tomorrow
+
+//Next 7 Days
 fetch("https://marine-api.open-meteo.com/v1/marine?latitude=-40.0492&longitude=144.0561&daily=wave_height_max,wave_direction_dominant,wave_period_max&timezone=Australia%2FSydney")
     .then((response) => {
         //show error if needed
@@ -144,8 +135,6 @@ fetch("https://marine-api.open-meteo.com/v1/marine?latitude=-40.0492&longitude=1
     })
     .then((data) => {
 
-
-//Next 7 Days
         //create a reference to the KI Next 7 Days container
         const KIweekContainer = document.querySelector(".ki-week-container");
         console.log("KIweekContainer: ", KIweekContainer);
