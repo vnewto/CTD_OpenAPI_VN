@@ -8,45 +8,75 @@
 King Island
 =========*/
 
+const pageURL = window.location.href;
+console.log("pageURL: ", pageURL);
+
+// if the page is kingisland
+    //set url to searchurl
+//if 
+
+
+
 //Current Local Time
+
+ //create reference to KI-current-container
+ const KIcurrCondContainer = document.querySelector(".current");
+ console.log("KIcurrCondContainer: ", KIcurrCondContainer);
+ const KIcurrContainer = document.querySelector(".ki-current-container");
+ console.log("KIcurrContainer: ", KIcurrContainer);
+
 //Fetch request to get current time
 fetch("https://www.timeapi.io/api/time/current/coordinate?latitude=-40.063669&longitude=144.061626")
     .then((response) => {
         return response.json();
     })
     .then((data) => {
-        console.log(data);
-        //create new date using current time
-        const KItime = new Date(data.dateTime);
-        console.log("KItime: ", KItime);
-        //create variables for hour and minute
-        const KIhour = KItime.getHours();
-        console.log("KIhour: ", KIhour);
-        const KImin = KItime.getMinutes();
-        console.log("KImin: ", KImin);
+        console.log("Kings Island time Open API: ", data);
+        
+        //pull current day, date, and time
+        const KIcurrentDate = data.date;
+        console.log("KIcurrentDate: ", KIcurrentDate);
+        const KIcurrentDay = data.dayOfWeek;
+        console.log("KIcurrentDay: ", KIcurrentDay);
+        const KIlocalTime = data.time;
+        console.log("KIlocalTime: ", KIlocalTime);
 
-        let hour = 14;
-        let KIcurrentTime = "";
-        //if hour equals 0, change it to 12 AM
-        if (hour === 0) {
-            let KIcurrentTime = `12:${KImin}am`;
-            console.log("local time: ", KIcurrentTime);
-        }
-        //if hour is between 1 and 11, make it AM
-        else if (1 <= hour <= 11) {
-            let KIcurrentTime = `${hour}:${KImin}am`;
-            console.log("local time: ", KIcurrentTime);
-        } 
-        //if hour is 12, make it PM
-        else if (hour === 12) {
-            let KIcurrentTime = `12:${KImin}pm`;
-            console.log("local time: ", KIcurrentTime);
-        }
-        //if hour is between 13 and 23, make it PM
-        else if (13 <= hour <= 23) {
-            let KIcurrentTime = (Number(hour)-12) + ":" + KImin + " pm";
-            console.log("local time: ", KIcurrentTime);
-        }
+        //create h3 element with inner text of day and date
+        let KIcurrentDayAndTime = document.createElement("h3");
+        KIcurrentDayAndTime.innerHTML = `${KIcurrentDay}, ${KIcurrentDate}`;
+        console.log("KIcurrentDayAndTime: ", KIcurrentDayAndTime);
+
+        //create a p element with local time
+        let KIcurrentTime = document.createElement("p");
+        KIcurrentTime.innerHTML = `Local time: ${KIlocalTime}`;
+        console.log("KIcurrentTime: ", KIcurrentTime);
+
+        //append h3 and p element to the "current" container
+        // KIcurrContainer.insertBefore(KIcurrentDayAndTime);
+        KIcurrCondContainer.appendChild(KIcurrentTime);
+        
+
+        // let KIcurrentTime = "";
+        // //if hour equals 0, change it to 12 AM
+        // if (KIhour === 0) {
+        //     let KIcurrentTime = `12:${KImin}am`;
+        //     console.log("local time: ", KIcurrentTime);
+        // }
+        // //if hour is between 1 and 11, make it AM
+        // else if (1 <= KIhour <= 11) {
+        //     let KIcurrentTime = `${hour}:${KImin}am`;
+        //     console.log("local time: ", KIcurrentTime);
+        // } 
+        // //if hour is 12, make it PM
+        // else if (KIhour === 12) {
+        //     let KIcurrentTime = `12:${KImin}pm`;
+        //     console.log("local time: ", KIcurrentTime);
+        // }
+        // //if hour is between 13 and 23, make it PM
+        // else if (13 <= KIhour <= 23) {
+        //     let KIcurrentTime = (Number(hour)-12) + ":" + KImin + " pm";
+        //     console.log("local time: ", KIcurrentTime);
+        // }
         
     })
     .catch((error) => {
@@ -66,8 +96,6 @@ fetch("https://marine-api.open-meteo.com/v1/marine?latitude=-40.063669&longitude
         return response.json();
         })
     .then((data) => {
-        //create reference to KI-current-container
-        const KIcurrContainer = document.querySelector(".ki-current-container");
         
         //define variables for each current height, direction, and period
         console.log("response for current wave variables at King Island: ", data);
