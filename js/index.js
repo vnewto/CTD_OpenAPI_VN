@@ -38,10 +38,13 @@ let weekWaves = "";
 //Fetch request to get current time
 fetch(localTime)
     .then((response) => {
+        if(!response.ok) {
+            throw new Error("Date & Time not found");
+        }
         return response.json();
     })
     .then((data) => {
-        console.log("Kings Island time Open API: ", data);
+        console.log("Time Open API: ", data);
         
         //pull current local day, date, and time
         const KIcurrentDate = data.date;
@@ -67,7 +70,11 @@ fetch(localTime)
         
     })
     .catch((error) => {
-        console.log(error)
+        let timeErrorMessage = document.createElement("p");
+        timeErrorMessage.classList.add(["error-message"]);
+        timeErrorMessage.innerText = error.message;
+        KIcurrCondContainer.appendChild(timeErrorMessage);
+        console.log(error);
     });
 
 
@@ -78,7 +85,7 @@ fetch(currentWaves)
     .then((response) => {
         //show error if needed
         if(!response.ok) {
-            throw new Error("Data not found");
+            throw new Error("Current wave variable data not found");
         }
         return response.json();
         })
@@ -115,6 +122,10 @@ fetch(currentWaves)
 
     })
     .catch((error) => {
+        let currentErrorMessage = document.createElement("p");
+        currentErrorMessage.classList.add(["error-message"]);
+        currentErrorMessage.innerText = error.message;
+        KIcurrContainer.appendChild(currentErrorMessage);
         console.log(error);
         });
 
@@ -126,7 +137,7 @@ fetch(weekWaves)
     .then((response) => {
         //show error if needed
         if(!response.ok) {
-            throw new Error("Data not found");
+            throw new Error("Wave variable data not found");
         }
         return response.json();
     })
@@ -181,14 +192,13 @@ fetch(weekWaves)
              KIweekDiv.appendChild(KIdirTxt);
              KIweekDiv.appendChild(KIPerTxt);
         }
-
-       
-
-
-
-
     })
     .catch((error) => {
+        let next7DaysContainer = document.querySelector(".week");
+        let weekErrorMessage = document.createElement("p");
+        weekErrorMessage.classList.add(["error-message"]);
+        weekErrorMessage.innerText = error.message;
+        next7DaysContainer.appendChild(weekErrorMessage);
         console.log(error);
     });
 
