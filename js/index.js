@@ -2,32 +2,31 @@
 
 //Kaneohe Bay Lat,Long: 21.458367, -157.759595
 
+//define variables for which page the user is on
 let pathName = window.location.pathname;
 console.log("pathName: ", pathName);
 const kingIslandPathName = "/kingisland.html"; 
 const kaneoheBayPathName = "/kaneohebay.html";
 
-//declare variables for all fetch urls, both KI (King Island) and KB (Kaneohe Bay)
-// let KIlocalTimeAPI = "https://www.timeapi.io/api/time/current/coordinate?latitude=-40.063669&longitude=144.061626";
-// let KIcurrentWaves = "https://marine-api.open-meteo.com/v1/marine?latitude=-40.063669&longitude=144.061626&current=wave_height,wave_direction,wave_period&timezone=Australia%2FSydney&forecast_days=1";
-// let KIweekWaves = "https://marine-api.open-meteo.com/v1/marine?latitude=-40.0492&longitude=144.0561&daily=wave_height_max,wave_direction_dominant,wave_period_max&timezone=Australia%2FSydney";
 
-// let KBlocalTimeAPI = "https://www.timeapi.io/api/time/current/coordinate?latitude=21.458367&longitude=-157.759595";
-// let KBcurrentWaves = "https://marine-api.open-meteo.com/v1/marine?latitude=21.458367&longitude=-157.759595&current=wave_height,wave_direction,wave_period&timezone=Pacific%2FAuckland";
-// let KBweekWaves = "https://marine-api.open-meteo.com/v1/marine?latitude=21.3999&longitude=-157.7989&daily=wave_height_max,wave_direction_dominant,wave_period_max&timezone=auto";
+
+//conditional statements to determine which urls are used for the fetch requests
 
 let localTime = "";
-let currentOpenAPI = "";
-let weekOpenAPI = "";
+let currentWaves = "";
+let weekWaves = "";
 
-//conditional statements to determine which webpage the user is in, which determine which url is used for the fetch requests
-
+    //urls for king island
     if (pathName.localeCompare(kingIslandPathName) === 0) {
-        let localTime = "https://www.timeapi.io/api/time/current/coordinate?latitude=-40.063669&longitude=144.061626";
-        console.log("localTime: ", localTime);
+        localTime = "https://www.timeapi.io/api/time/current/coordinate?latitude=-40.063669&longitude=144.061626";
+        currentWaves = "https://marine-api.open-meteo.com/v1/marine?latitude=-40.063669&longitude=144.061626&current=wave_height,wave_direction,wave_period&timezone=Australia%2FSydney&forecast_days=1";
+        weekWaves = "https://marine-api.open-meteo.com/v1/marine?latitude=-40.0492&longitude=144.0561&daily=wave_height_max,wave_direction_dominant,wave_period_max&timezone=Australia%2FSydney";
     } 
+    //urls for kaneohe bay
     else if (pathName.localeCompare(kaneoheBayPathName) === 0) {
-         let localTime = "https://www.timeapi.io/api/time/current/coordinate?latitude=21.458367&longitude=-157.759595";
+        localTime = "https://www.timeapi.io/api/time/current/coordinate?latitude=21.458367&longitude=-157.759595";
+        currentWaves = "https://marine-api.open-meteo.com/v1/marine?latitude=21.458367&longitude=-157.759595&current=wave_height,wave_direction,wave_period&timezone=Pacific%2FAuckland";
+        weekWaves = "https://marine-api.open-meteo.com/v1/marine?latitude=21.3999&longitude=-157.7989&daily=wave_height_max,wave_direction_dominant,wave_period_max&timezone=auto";
     } 
 
 //Current Local Time
@@ -56,12 +55,12 @@ fetch(localTime)
 
         //create h3 element with inner text of day and date
         let KIcurrentDayAndTime = document.createElement("h3");
-        KIcurrentDayAndTime.innerHTML = `${KIcurrentDay}, ${KIcurrentDate}`;
+        KIcurrentDayAndTime.innerHTML = `Date: ${KIcurrentDay}, ${KIcurrentDate}`;
         console.log("KIcurrentDayAndTime: ", KIcurrentDayAndTime);
 
         //create a p element with local time
-        let KIcurrentTime = document.createElement("p");
-        KIcurrentTime.innerHTML = `Local time: ${KIlocalTime}`;
+        let KIcurrentTime = document.createElement("h3");
+        KIcurrentTime.innerHTML = `Local time (24-hr): ${KIlocalTime}`;
         console.log("KIcurrentTime: ", KIcurrentTime);
 
         //append h3 and p element to the "current" container
@@ -77,7 +76,7 @@ fetch(localTime)
 
 
 // Current
-fetch("https://marine-api.open-meteo.com/v1/marine?latitude=-40.063669&longitude=144.061626&current=wave_height,wave_direction,wave_period&timezone=Australia%2FSydney&forecast_days=1")
+fetch(currentWaves)
     .then((response) => {
         //show error if needed
         if(!response.ok) {
@@ -125,7 +124,7 @@ fetch("https://marine-api.open-meteo.com/v1/marine?latitude=-40.063669&longitude
 
 
 //Next 7 Days
-fetch("https://marine-api.open-meteo.com/v1/marine?latitude=-40.0492&longitude=144.0561&daily=wave_height_max,wave_direction_dominant,wave_period_max&timezone=Australia%2FSydney")
+fetch(weekWaves)
     .then((response) => {
         //show error if needed
         if(!response.ok) {

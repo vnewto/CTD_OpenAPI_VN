@@ -55,7 +55,6 @@ h1,
 
 h3 {
     color:rgb(152, 195, 189);
-    text-shadow: 0 0 2px black;
 }
 
 p a {
@@ -232,13 +231,17 @@ Project Pages
     color: #fff;
 }
 
-.ki-pic {
+.ki-pic,
+.kb-pic {
     object-fit: cover;
     width: 100%;
-    max-height: 200px;
     border-radius: 15px;
-    margin: 1em auto 0;
+    margin: 1em auto 0 auto;
     box-shadow: 0 0 3px 0 #172d34;
+}
+
+.ki-pic {
+    max-height: 200px;
 }
 
 .ki-pic-container a {
@@ -251,10 +254,14 @@ Project Pages
 }
 
 .project-variables-container {
-    display: flex;
-    flex-direction: column;
     margin: 0 auto 1.5em;
     color: #fff;
+    gap: 1em;
+}
+
+.week-container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .current {
@@ -272,10 +279,6 @@ Project Pages
     padding: 0.5em 1em;
 }
 
-.ki-day {
-    padding: 0 1.5em;
-}
-
 .ki-current-container p {
     margin: 0.5em;
 }
@@ -288,7 +291,8 @@ Project Pages
 
 .ki-day {
     box-shadow: 0 0 3px 0 #DBE7EFff;
-    margin: 0.7em auto;
+    margin: auto;
+    padding: 0 1.5em;
 }
 
 
@@ -347,9 +351,17 @@ Media Queries
         flex-direction: row;
     }
 
-    .energy-video {
-        width: 85%;
+    .kb-pic-container {
+        display: flex;
+        gap: 1.5em;
+        padding-bottom: 1em;
+        align-items: center;
     }
+
+    .kb-pic {
+        max-width: 70%;
+    }
+
 }
 
 
@@ -359,6 +371,14 @@ Media Queries
 @media(min-width: 900px) {
     .container {
         margin-bottom: 3em;
+    }
+
+    .grid-container {
+        grid-template-columns: 0 45 45 0;
+        grid-template-areas: 
+            " . kiPicture current . "
+            " . week week . ";
+            gap: 1em;
     }
 
     .ocean-waves-pic {
@@ -395,6 +415,11 @@ Media Queries
         padding: 1em;
         padding-left: 2em;
         border-left: solid #9EBDB9ff 2px;
+    }
+
+    iframe {
+        height: 100%;
+        width: 100%;
     }
 
 }
