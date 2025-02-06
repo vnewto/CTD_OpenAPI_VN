@@ -211,7 +211,7 @@ Project Pages
 
 .grid-container {
     display: grid;
-    grid-template-columns: 0 95 0;
+    grid-template-columns: 0 95% 0;
     grid-template-areas: 
         " . kiPicture . "
         " . current . "
@@ -374,7 +374,7 @@ Media Queries
     }
 
     .grid-container {
-        grid-template-columns: 0 45 45 0;
+        grid-template-columns: 0 45% 45% 0;
         grid-template-areas: 
             " . kiPicture current . "
             " . week week . ";
@@ -420,6 +420,12 @@ Media Queries
     iframe {
         height: 100%;
         width: 100%;
+    }
+
+
+    .kb-pic {
+        max-width: 50%;
+        height: 90%;
     }
 
 }

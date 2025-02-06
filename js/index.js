@@ -1,5 +1,4 @@
 //King Island Lat,Long: -40.063669, 144.061626
-
 //Kaneohe Bay Lat,Long: 21.458367, -157.759595
 
 //define variables for which page the user is on
@@ -7,7 +6,6 @@ let pathName = window.location.pathname;
 console.log("pathName: ", pathName);
 const kingIslandPathName = "/kingisland.html"; 
 const kaneoheBayPathName = "/kaneohebay.html";
-
 
 
 //conditional statements to determine which urls are used for the fetch requests
@@ -87,7 +85,7 @@ fetch(currentWaves)
     .then((data) => {
         
         //define variables for each current height, direction, and period
-        console.log("response for current wave variables at King Island: ", data);
+        console.log("response for current wave variables: ", data);
         
         let KIcurrentHeight = data.current.wave_height;
         console.log("KIcurrentHeight: ", KIcurrentHeight);
