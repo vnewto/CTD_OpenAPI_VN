@@ -12,13 +12,13 @@ Each wave energy site page includes the following three key sections:
     - Box 2: The wave energy project site's local date and time, current wave conditions (height(m), period(s), and direction(degrees))
     - Box 3: The projection of the daily average of the three wave variables for the next 7 days, as well as the upcoming dates and days of the week
 
-Each wave energy site page uses three different GET requests from two different Open API sources. The [Time API] (https://www.timeapi.io/swagger/index.html) is used to fetch and display the local date and time, while the [Marine Weather API from Open-Meteo] (https://open-meteo.com/en/docs/marine-weather-api) is used to fetch and display the current and upcoming wave conditions. Latitude and Longitude coordinates were used for each location. 
+Each wave energy site page uses three different GET requests from two different Open API sources. The [Time API](https://www.timeapi.io/swagger/index.html) is used to fetch and display the local date and time, while the [Marine Weather API from Open-Meteo](https://open-meteo.com/en/docs/marine-weather-api) is used to fetch and display the current and upcoming wave conditions. Latitude and Longitude coordinates were used for each location. 
 
 An if/else statement is used to determine which fetch urls to use based on what page the user is on. This ensures the correct data will load for each ocean wave site.
 
 
 # Getting Started
-Code editing software is required to run this project on your local machine. GitHub offers their own free software called GitHub desktop, which can be downloaded at https://github.com/apps/desktop.
+Code editing software is required to run this project on your local machine. GitHub also offers their own free software called [GitHub Desktop](https://github.com/apps/desktop) which can be downloaded if needed.
 
 1. Create and/or open a folder where you want to save the repository. In your code editor, navigate to that folder. Clone the repository by typing the following command into your terminal: 
 ```bash
@@ -42,11 +42,8 @@ If the index.html page is not loading in the browser, check your internet connec
 
 If the local time or any of the wave variables are not loading, double check the API website to make sure the urls are still current.
 
-Please [submit an issue] (https://github.com/vnewto/CTD_OpenAPI_VN/issues) if you have any other problems.
+Please [submit an issue](https://github.com/vnewto/CTD_OpenAPI_VN/issues) if you have any other problems.
 
 
 # Contribution
 The idea of this project is that it can be modified for any location and can be used to either make predictions about the upcoming week's potential energy generation or determine safety conditions for onsite workers. This project could also be modified to include additional marine variables including wind, swell, ocean velocity, and more. Other time intervals are included in the Marine Weather API including hourly variables and a daily average forecast up to 14 days. Pull requests are welcome if you would like to make any changes.
-
-# Authors
-Valerie Newton
