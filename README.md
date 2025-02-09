@@ -42,6 +42,8 @@ If the index.html page is not loading in the browser, check your internet connec
 
 If the local time or any of the wave variables are not loading, double check the API website to make sure the urls are still current.
 
+Please [submit an issue] (https://github.com/vnewto/CTD_OpenAPI_VN/issues) if you have any other problems.
+
 
 # Contribution
 The idea of this project is that it can be modified for any location and can be used to either make predictions about the upcoming week's potential energy generation or determine safety conditions for onsite workers. This project could also be modified to include additional marine variables including wind, swell, ocean velocity, and more. Other time intervals are included in the Marine Weather API including hourly variables and a daily average forecast up to 14 days. Pull requests are welcome if you would like to make any changes.
