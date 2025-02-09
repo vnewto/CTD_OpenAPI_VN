@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marine Wave Forecasts: Kaneohe Bay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coustard:wght@400;900&family=Geologica:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/88de86cf7d.js" crossorigin="anonymous"></script>
+    <link href="css/index.css" rel="stylesheet">
+    <style>
+        html {
+            background-image: url("img/ocean-waves.jpg");
+            object-fit: cover;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body id="kaneohe-bay-page">
+    <nav>
+        <ul class="nav-list">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="kingisland.html" class="nav-link">King Island</a></li>
+            <li><a href="kaneohebay.html" class="active nav-link">Kaneohe Bay</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Kaneohe Bay</h1>
+    </header>
+
+    <div class="container grid-container">
+        <div class="ki-pic-container kb-pic-container project-grid-item">
+            <image src="img/kaneohe-bay.jpg" alt="the Kaneohe Bay yellow Power Buoy floating in the ocean" class="kb-pic"></image>
+            <p>The <a href="https://tethys.pnnl.gov/project-sites/kaneohe-bay-opt-wave-project">PowerBuoy PB40</a> was a 40kW wave energy test project in Kaneohe Bay, Oahu, Hawaii, that was connected to the grid in 2010 and decomissioned in 2011.</p>
+        </div>
+        <div class="current project-grid-item">
+            <h2 class="project-h2">Current Conditions</h2>
+            <div class="project-variables-container current-container ki-current-container"></div>
+        </div>
+        <div class="week project-grid-item">
+            <h2 class="project-h2">Next 7 Days</h2>
+            <div class="project-variables-container week-container ki-week-container"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <ul class="connect-ul">
+            <li>
+                <a href="https://www.linkedin.com/in/valerie-newton-a250879b/" class="logo-link"><i class="fa-brands fa-linkedin connect-logo"></i></a>
+            </li>
+            <li>
+                <a href="https://github.com/vnewto" class="logo-link"><i class="fa-brands fa-github connect-logo"></i></a>
+            </li>
+            <li>
+                <a href="mailto:valerie.newton16@gmail.com" class="logo-link"><i class="fa-solid fa-envelope connect-logo"></i></a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
