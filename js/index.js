@@ -6,7 +6,7 @@ let pathName = window.location.pathname;
 console.log("pathName: ", pathName);
 const kingIslandPathName = "/kingisland.html"; 
 const kaneoheBayPathName = "/kaneohebay.html";
-
+const homePagePathName = "/index.html";
 
 //conditional statements to determine which urls are used for the fetch requests
 
@@ -29,7 +29,7 @@ let weekWaves = "";
 
 //Current Local Time
 
- //create reference to KI-current-container
+ //create reference to the containers that will hold the variables information
  const KIcurrCondContainer = document.querySelector(".current");
  console.log("KIcurrCondContainer: ", KIcurrCondContainer);
  const KIcurrContainer = document.querySelector(".ki-current-container");
