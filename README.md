@@ -7,10 +7,13 @@ This project is written with HTML, CSS, and JavaScript.
 
 This project has a home page with some basic information about ocean wave energy and wave energy variables, as well as a page for each wave energy project site (in this case, an additional page for each Kaneohe Bay and King Island). The home page includes links to each wave energy project site; every page has a navigation bar that will take you to any page. 
 
+Home Page:
+![Ocean wave energy site home page](\img\OceanEnergyHomePage.jpg)
+
 Each wave energy site page includes the following three key sections:
-    - Box 1: A picture of the wave energy project with a short description
-    - Box 2: The wave energy project site's local date and time, current wave conditions (height(m), period(s), and direction(degrees))
-    - Box 3: The projection of the daily average of the three wave variables for the next 7 days, as well as the upcoming dates and days of the week
+    1. Box 1: A picture of the wave energy project with a short description
+    2. Box 2: The wave energy project site's local date and time, current wave conditions (height(m), period(s), and direction(degrees))
+    3. Box 3: The projection of the daily average of the three wave variables for the next 7 days, as well as the upcoming dates and days of the week
 
 Each wave energy site page uses three different GET requests from two different Open API sources. The [Time API](https://www.timeapi.io/swagger/index.html) is used to fetch and display the local date and time, while the [Marine Weather API from Open-Meteo](https://open-meteo.com/en/docs/marine-weather-api) is used to fetch and display the current and upcoming wave conditions. Latitude and Longitude coordinates were used for each location. 
 
