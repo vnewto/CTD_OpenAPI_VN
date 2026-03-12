@@ -8,21 +8,21 @@ This project is written with HTML, CSS, and JavaScript.
 
 This project has a home page with some basic information about ocean wave energy and wave energy variables, as well as a page for each wave energy project site (in this case, an additional page for each Kaneohe Bay and King Island). The home page includes links to each wave energy project site; every page has a navigation bar that will take you to any page.
 
-##### Home Page:
+#### Home Page:
 
 ![Ocean wave energy site home page](img/ocean-energy-home-page.jpg)
 
-Each wave energy site page includes the following three key sections: 
+Each wave energy site page includes the following three key sections:
 
-1. Box 1: A picture of the wave energy project with a short description
+##### 1. Box 1 - A picture of the wave energy project with a short description
 
 ![Project description](img/box-1.jpg)
 
-2. Box 2: The wave energy project site's local date and time, current wave conditions (height(m), period(s), and direction(degrees))
+##### 2. Box 2 - The wave energy project site's local date and time, current wave conditions (height(m), period(s), and direction(degrees))
 
-![Current wave conditions](img/box-2.jpg) 
+![Current wave conditions](img/box-2.jpg)
 
-3. Box 3: The projection of the daily average of the three wave variables for the next 7 days, as well as the upcoming dates and days of the week
+##### 3. Box 3 - The projection of the daily average of the three wave variables for the next 7 days, as well as the upcoming dates and days of the week
 
 ![Predicted conditions for the next seven days](img/box-3.jpg)
 
