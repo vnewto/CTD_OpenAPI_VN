@@ -8,8 +8,6 @@ This project is written with HTML, CSS, and JavaScript.
 
 This project has a home page with some basic information about ocean wave energy and wave energy variables, as well as a page for each wave energy project site (in this case, an additional page for each Kaneohe Bay and King Island). The home page includes links to each wave energy project site; every page has a navigation bar that will take you to any page.
 
-Home Page:
-
 ![Ocean wave energy site home page](img\ocean-energy-home-page.jpg)
 
 Each wave energy site page includes the following three key sections: - Box 1: A picture of the wave energy project with a short description
@@ -59,5 +57,8 @@ The idea of this project is that it can be modified for any location and can be 
 Valerie Newton
 
 # Acknowledgements
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2e589ae8671702eab754278b6a78db279bfc32ec
 This project is part of my classwork in the Introduction to Programming class through [Code the Dream](https://codethedream.org/). Thank you to all the mentors and volunteers who put this program together. A special thank you to Suzy Mann for all your assistance and input.
