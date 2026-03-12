@@ -8,7 +8,7 @@ This project is written with HTML, CSS, and JavaScript.
 This project has a home page with some basic information about ocean wave energy and wave energy variables, as well as a page for each wave energy project site (in this case, an additional page for each Kaneohe Bay and King Island). The home page includes links to each wave energy project site; every page has a navigation bar that will take you to any page. 
 
 Home Page:
-![Ocean wave energy site home page](/img/OceanEnergyHomePage.jpg)
+![Ocean wave energy site home page](img/OceanEnergyHomePage.jpg)
 
 Each wave energy site page includes the following three key sections:
     1. Box 1: A picture of the wave energy project with a short description
