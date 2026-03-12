@@ -8,12 +8,24 @@ This project is written with HTML, CSS, and JavaScript.
 
 This project has a home page with some basic information about ocean wave energy and wave energy variables, as well as a page for each wave energy project site (in this case, an additional page for each Kaneohe Bay and King Island). The home page includes links to each wave energy project site; every page has a navigation bar that will take you to any page.
 
+##### Home Page:
+
 ![Ocean wave energy site home page](img/ocean-energy-home-page.jpg)
 
-Each wave energy site page includes the following three key sections: - Box 1: A picture of the wave energy project with a short description
-![Project description](img/box-1.jpg) - Box 2: The wave energy project site's local date and time, current wave conditions (height(m), period(s), and direction(degrees))
-![Current wave conditions](img/box-2.jpg) - Box 3: The projection of the daily average of the three wave variables for the next 7 days, as well as the upcoming dates and days of the week
+Each wave energy site page includes the following three key sections: 
+
+1. Box 1: A picture of the wave energy project with a short description
+
+![Project description](img/box-1.jpg)
+
+2. Box 2: The wave energy project site's local date and time, current wave conditions (height(m), period(s), and direction(degrees))
+
+![Current wave conditions](img/box-2.jpg) 
+
+3. Box 3: The projection of the daily average of the three wave variables for the next 7 days, as well as the upcoming dates and days of the week
+
 ![Predicted conditions for the next seven days](img/box-3.jpg)
+
 Each wave energy site page uses three different GET requests from two different Open API sources. The [Time API](https://www.timeapi.io/swagger/index.html) is used to fetch and display the local date and time, while the [Marine Weather API from Open-Meteo](https://open-meteo.com/en/docs/marine-weather-api) is used to fetch and display the current and upcoming wave conditions. Latitude and Longitude coordinates were used for each location.
 
 An if/else statement is used to determine which fetch urls to use based on what page the user is on. For example, if the user selects "Kaneohe Bay" using the navigation bar, the if/else statement will check the pathName of the page, determine that it is "/kaneohebay.html", pull the correct Open API fetch urls that match with the Kaneohe Bay latitude/longitude coordinates, and insert those urls into the fetch requests. This ensures the correct data will load for each ocean wave site. Alternatively, the user can select one of the buttons on the home page to navigate to a project site instead of using the navigation menu.
@@ -57,8 +69,5 @@ The idea of this project is that it can be modified for any location and can be 
 Valerie Newton
 
 # Acknowledgements
-<<<<<<< HEAD
 
-=======
->>>>>>> 2e589ae8671702eab754278b6a78db279bfc32ec
 This project is part of my classwork in the Introduction to Programming class through [Code the Dream](https://codethedream.org/). Thank you to all the mentors and volunteers who put this program together. A special thank you to Suzy Mann for all your assistance and input.
